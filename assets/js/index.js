@@ -63,7 +63,7 @@ function mostrarDetallesCompra(carrito) {
     productosFiltrados.forEach(producto => {
         let cantidadProductos = carrito.arreglo.filter(x => x.nombre === producto.nombre).length;
         let totalPorCantidad = cantidadProductos * producto.precio;
-        console.log(`Producto: ${producto.nombre}, precio: ${producto.precio}, cantidad: ${cantidadProductos}, total: $${totalPorCantidad}`);
+        console.log(`Producto: ${producto.nombre}, precio: $${producto.precio}, cantidad: ${cantidadProductos}, total: $${totalPorCantidad}`);
     });
     console.log(`Total final de compra: $${calcularTotalCompra(carrito)}`);
 }
@@ -108,6 +108,7 @@ do {
     agregarProductosCarrito(carrito, numeroProducto, cantidad);
 
     compraFinalizada = continuarCompra();
+    
 } while (!compraFinalizada);
 
 finalizarCompra(carrito);
